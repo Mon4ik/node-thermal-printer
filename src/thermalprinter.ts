@@ -70,4 +70,14 @@ export default class ThermalPrinter {
 		this.exec(0x0A)
 	}
 
+	addQRCode(data: string) {
+		this.addSpace()
+
+		this.exec(0x1c, 0x7d, 0x25)
+		this.exec(data.length)
+		this.exec(data)
+
+		this.addSpace()
+	}
+
 }

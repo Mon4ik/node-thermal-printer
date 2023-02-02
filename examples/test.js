@@ -43,6 +43,13 @@ printer.addLine("underline", {
 printer.addSpace()
 printer.addSpace()
 
+printer.addQRCode("http://idkncc.ru")
+
 printer.addLine("Test completed", {
     double_width: true
 })
+
+printer.addSpace()
+printer.addSpace()
+printer.addSpace()
+

@@ -19,3 +19,8 @@ Thermal Printer protocol for NodeJS
    ```shell
    npm link
    ```
+   
+## Used
+- Default Node Packages (child_process)
+- Typescript
+- ["ESC/POS Documentation for Pyramid Printers"](https://escpos.readthedocs.io/en/latest/home.html)

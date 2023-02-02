@@ -7,17 +7,26 @@ export type AddLineOptions = {
 	double_width: boolean,
 	italic: boolean,
 	underline: boolean,
+}
 
-
+export enum CharacterCodePages {
+	ASCII = 0,
+	CP437 = 3,
+	CP808 = 17,
+	GeorgianMkhedruli = 18
 }
 
 
 export default class ThermalPrinter {
 	private readonly linux_file: string
+
 	public _DEBUG = false
 
-	constructor(linux_file: string) {
+	constructor(linux_file: string, encoding: CharacterCodePages = 0) {
 		this.linux_file = linux_file
+
+		this.exec(0x1B, 0x40)
+		this.exec(0x1B, 0x74, encoding)
 	}
 
 	exec(...buffer: number[] | string[]) {
@@ -67,7 +76,7 @@ export default class ThermalPrinter {
 	}
 
 	addSpace() {
-		this.exec(0x0A)
+		this.exec("")
 	}
 
 	addQRCode(data: string) {

@@ -1,7 +1,7 @@
 const {add} = require("nodemon/lib/rules");
 const ThermalPrinter = require("../lib").default
 
-const printer = new ThermalPrinter("/dev/usb/lp0")
+const printer = new ThermalPrinter("/dev/usb/lp0", 17)
 
 // in debug mode module will print commands, not execute
 printer._DEBUG = true
@@ -42,6 +42,9 @@ printer.addLine("underline", {
 
 printer.addSpace()
 printer.addSpace()
+
+printer.addLine("Hola Mundo!", {})
+printer.addLine("Привет мир!", {})
 
 printer.addQRCode("http://idkncc.ru")
 

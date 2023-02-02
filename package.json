@@ -1,6 +1,6 @@
 {
   "name": "node-thermal-printer",
-  "version": "1.0.0b1",
+  "version": "1.0.0b2",
   "description": "Thermal Printer Protocol",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",

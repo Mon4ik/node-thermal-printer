@@ -1,5 +1,4 @@
-import {Buffer} from "buffer";
-import {execSync} from "child_process";
+import {spawnSync} from "child_process";
 
 export type AddLineOptions = {
 	font: "A" | "B"
@@ -26,13 +25,13 @@ export default class ThermalPrinter {
 		if (buffer.some((c) => typeof c === "string")) { // if it has any string
 			command = `echo "${buffer.join("")}" > ${this.linux_file}`
 		} else {
-			command = `echo -en "${buffer.map((n) => '\\x' + n.toString(16)).join("")}" > ${this.linux_file}`
+			command = `echo -en "${buffer.map((n) => '\\x' + n.toString(16)).join('')}" > ${this.linux_file}`
 		}
 
 		if (this._DEBUG) {
 			console.log("$ " + command)
 		} else {
-			execSync(command)
+			spawnSync("bash", ["-c", command])
 		}
 	}
 

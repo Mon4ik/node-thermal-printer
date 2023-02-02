@@ -1,0 +1,24 @@
+{
+  "name": "node-thermal-printer",
+  "version": "1.0.0b1",
+  "description": "Thermal Printer Protocol",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "watch": "nodemon --exec \"tsc\"",
+    "prepare" : "npm run build"
+  },
+  "keywords": ["thermal-printer", "typescript", "nodejs"],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mon4ik/node-thermal-printer.git"
+  },
+  "author": "idkncc",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/node": "^18.11.18",
+    "nodemon": "^2.0.20",
+    "typescript": "^4.9.5"
+  }
+}

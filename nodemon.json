@@ -1,0 +1,4 @@
+{
+  "ignore": ["node_modules", "lib", "examples"],
+  "ext": "js,mjs,ts,json"
+}
